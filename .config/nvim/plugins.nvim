@@ -1,0 +1,20 @@
+call plug#begin('~/.local/share/nvim/bundle')
+
+function! BuildYCM(info)
+	if a:info.status = 'installed' || a:info.force
+		!./install.py --clang-completer --racer-completer
+	endif
+endfunction
+
+Plug 'joshdick/onedark.vim'
+
+
+Plug 'valloric/youcompleteme', { 'do': function('BuildYCM') }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+
+
+call plug#end()
