@@ -155,3 +155,5 @@ bar {
         status_command i3status
         position top
 }
+
+bindsym $mod+Shift+l exec i3lock
